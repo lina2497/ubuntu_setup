@@ -6,6 +6,11 @@ sudo apt update
 sudo apt install --no-install-recommends r-base
 
 # Install rstudio server
+echo "deb http://security.ubuntu.com/ubuntu impish-security main" | sudo tee /etc/apt/sources.list.d/impish-security.list
+
+sudo apt-get update
+sudo apt-get install libssl1.1
+
 sudo apt-get install gdebi-core
 wget https://download2.rstudio.org/server/bionic/amd64/rstudio-server-2022.07.0-548-amd64.deb
 sudo gdebi rstudio-server-2022.07.0-548-amd64.deb

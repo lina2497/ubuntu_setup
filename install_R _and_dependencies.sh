@@ -1,4 +1,12 @@
 sudo apt-get install build-essential
+
+sudo swapoff -a
+sudo dd if=/dev/zero of=/swapfile bs=500MB count=8
+sudo mkswap /swapfile
+sudo swapon /swapfile
+grep SwapTotal /proc/meminfo
+
+
 # Install R
 wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo gpg --dearmor -o /usr/share/keyrings/r-project.gpg
 echo "deb [signed-by=/usr/share/keyrings/r-project.gpg] https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/" | sudo tee -a /etc/apt/sources.list.d/r-project.list
